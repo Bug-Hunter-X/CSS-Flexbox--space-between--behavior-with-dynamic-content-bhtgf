@@ -1,0 +1,16 @@
+The following CSS code has a subtle bug that can lead to unexpected layout issues:
+
+```css
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+```
+
+This code creates a flex container with two items. The `justify-content: space-between;` property distributes the space between the items, ensuring that there is equal spacing between them and the container edges. However, if one of the items is removed, the remaining item will not be centered as one might expect. Instead, it will move to the start of the container.
