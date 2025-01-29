@@ -1,0 +1,22 @@
+To address this issue, you can use a more flexible layout approach, such as centering the remaining item if only one exists:
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+/* Center a single item */
+.container:has(:only-child) {
+  justify-content: center;
+}
+```
+
+This revised CSS uses `justify-content: center` to center the flex item, and `align-items: center` to center it along the vertical axis, as well.  The `:has(:only-child)` pseudo-class selector targets the container when it only contains one child element, ensuring proper centering of that single item. Alternatively, consider `justify-content: center` to always center the element, which is a simpler solution if centering is always the desired behavior regardless of the number of items.
